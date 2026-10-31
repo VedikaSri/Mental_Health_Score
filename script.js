@@ -3,9 +3,8 @@
 
   // ---------------------------------------------------------
   // Backend Configuration:
-  // Automatically detects localhost/127.0.0.1 to target your
-  // local FastAPI backend (http://127.0.0.1:8000), while falling
-  // back to Render (or your deployed cloud backend) when hosted.
+  // Deployed FastAPI backend. Change this to
+  // http://127.0.0.1:8000 when testing against your local API.
   // ---------------------------------------------------------
   const API_BASE = "https://mental-health-score-kc9n.onrender.com";
 
@@ -363,15 +362,16 @@
     });
   }
 
+  function returnToIdle() {
+    clearAllErrors();
+    showState("idle");
+  }
+
   if (resetBtn) {
-    resetBtn.addEventListener("click", () => {
-      showState("idle");
-    });
+    resetBtn.addEventListener("click", returnToIdle);
   }
 
   if (errorRetryBtn) {
-    errorRetryBtn.addEventListener("click", () => {
-      showState("idle");
-    });
+    errorRetryBtn.addEventListener("click", returnToIdle);
   }
 })();

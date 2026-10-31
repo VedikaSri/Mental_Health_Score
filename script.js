@@ -7,7 +7,7 @@
   // local FastAPI backend (http://127.0.0.1:8000), while falling
   // back to Render (or your deployed cloud backend) when hosted.
   // ---------------------------------------------------------
-  const API_BASE = "http://127.0.0.1:8000";
+  const API_BASE = "https://mental-health-score-kc9n.onrender.com/";
 
   // DOM Elements
   const form = document.getElementById("predict-form");
